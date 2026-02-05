@@ -1,0 +1,140 @@
+# API Contract: Educational Content Delivery
+
+**Version**: 1.0.0
+**Date**: 2026-02-05
+**Module**: ROS 2 Fundamentals
+
+## Overview
+
+This contract defines the interface for delivering educational content about ROS 2 fundamentals. Since this is a documentation module, the "API" consists of content structure and navigation patterns.
+
+## Content Structure Contract
+
+### Chapter Endpoint: GET /modules/ros2-fundamentals/{chapter}
+
+**Description**: Retrieve educational content for a specific chapter
+
+**Path Parameters**:
+- `chapter`: Chapter identifier (fundamentals | python-control | urdf-structure)
+
+**Response**:
+```
+{
+  "title": "string",
+  "objectives": ["string"],
+  "sections": [
+    {
+      "title": "string",
+      "content": "string (Markdown)",
+      "examples": [
+        {
+          "title": "string",
+          "code": "string",
+          "explanation": "string"
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "title": "string",
+      "description": "string",
+      "difficulty": "beginner|intermediate|advanced"
+    }
+  ],
+  "key_takeaways": ["string"]
+}
+```
+
+### Search Endpoint: GET /modules/ros2-fundamentals/search?q={query}
+
+**Description**: Search educational content within the ROS 2 fundamentals module
+
+**Query Parameters**:
+- `q`: Search query string
+- `limit`: Maximum results to return (default: 10)
+
+**Response**:
+```
+{
+  "results": [
+    {
+      "title": "string",
+      "snippet": "string",
+      "url": "string",
+      "relevance": "number"
+    }
+  ],
+  "total_results": "number"
+}
+```
+
+### Progress Endpoint: POST /modules/ros2-fundamentals/progress
+
+**Description**: Track learner progress through the module
+
+**Request Body**:
+```
+{
+  "learner_id": "string",
+  "chapter": "string",
+  "completed_sections": ["string"],
+  "exercise_attempts": [
+    {
+      "exercise_id": "string",
+      "status": "passed|failed|incomplete"
+    }
+  ],
+  "timestamp": "ISO8601"
+}
+```
+
+**Response**:
+```
+{
+  "status": "success|error",
+  "message": "string",
+  "completion_percentage": "number"
+}
+```
+
+## Navigation Contract
+
+### Menu Structure
+The module must provide a clear navigation menu with:
+- Sequential chapter progression
+- Table of contents for each chapter
+- Cross-links between related concepts
+- Quick access to exercises and examples
+
+### Content Presentation
+Each content page must include:
+- Clear learning objectives
+- Progressive concept introduction
+- Code examples with syntax highlighting
+- Exercises with feedback mechanisms
+- Key takeaway summaries
+
+## Quality Standards
+
+### Content Requirements
+- All code examples must be valid and tested
+- Explanations must be beginner-friendly
+- Concepts must be connected logically
+- Analogies must be relevant and helpful
+
+### Performance Requirements
+- Page load time < 2 seconds
+- Search response time < 500ms
+- Mobile-responsive design
+- Accessibility compliance (WCAG 2.1 AA)
+
+## Error Handling
+
+### Client Errors (4xx)
+- `400 Bad Request`: Invalid request parameters
+- `404 Not Found`: Requested chapter does not exist
+
+### Server Errors (5xx)
+- `500 Internal Server Error`: Unexpected server error
+- `503 Service Unavailable`: Content temporarily unavailable

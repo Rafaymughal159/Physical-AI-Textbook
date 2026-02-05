@@ -1,55 +1,62 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A -> 1.0.0
+- Modified principles: N/A (new constitution)
+- Added sections: All sections (new constitution)
+- Removed sections: N/A
+- Templates requiring updates:
+  - .specify/templates/plan-template.md ⚠ pending
+  - .specify/templates/spec-template.md ⚠ pending
+  - .specify/templates/tasks-template.md ⚠ pending
+  - .specify/templates/commands/*.md ⚠ pending
+- Follow-up TODOs: None
+-->
+# AI-Spec-Driven Technical Book with Embedded RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-first, AI-native Development
+All content and functionality begin with detailed specifications; Every feature follows a structured, AI-assisted development process; Documentation and implementation are developed in parallel with mutual consistency.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Technical Accuracy and Verifiability
+All content must be factually accurate and scientifically valid; Code examples must be tested and reproducible; Claims must be supported by evidence or clearly marked as theoretical.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Clarity for Developers and AI Practitioners
+Content must be accessible to both novice and experienced practitioners; Technical concepts should be explained with practical examples; Code samples should be well-documented and follow best practices.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Reproducibility and Maintainability
+All examples and demonstrations must be reproducible by readers; Systems and processes must be designed for long-term maintenance; Version control and dependency management are mandatory.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Embedded RAG Excellence
+The chatbot must provide accurate answers solely from book content; User-selected text functionality must be reliable and efficient; Context limitations must be clearly communicated when insufficient.
 
-### [PRINCIPLE_6_NAME]
+## Engineering Standards
 
+### Clean Architecture and Modular Design
+Systems must follow clean architecture principles with clear separation of concerns; Components must be loosely coupled and highly cohesive; Interface contracts must be well-defined and stable.
 
-[PRINCIPLE__DESCRIPTION]
+### Configuration Management
+All configurations must be managed via environment variables; Secrets and sensitive data must never be hardcoded; Configuration validation must occur at application startup.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Deployment and Infrastructure
+Book must be deployable to GitHub Pages with automated builds; Infrastructure as code must be used where applicable; All deployment processes must be documented and reproducible.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Repository Organization
+Repository must include comprehensive README with setup instructions; Architecture overview must be clearly documented; Contribution guidelines must be provided.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Content Creation Process
+Technical content must follow Docusaurus standards using Spec-Kit Plus; Chapters must include objectives, explanations, and executable examples; Peer review is required for all substantial content changes.
+
+### Code Quality Standards
+All code examples must be tested and verified for accuracy; Security scanning must be performed on all dependencies; Performance benchmarks must be established for critical components.
+
+### Testing and Validation
+Automated tests must cover all core functionality; Manual testing must verify user experience flows; Acceptance criteria must be defined before implementation begins.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all aspects of the AI-Spec-Driven Technical Book with Embedded RAG Chatbot project. All development activities, code contributions, and content additions must comply with these principles. Changes to this constitution require documented justification and approval from project maintainers. All pull requests must demonstrate compliance with these principles during review.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-02-05 | **Last Amended**: 2026-02-05
