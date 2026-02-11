@@ -11,12 +11,12 @@ user: user
 command: /sp.tasks
 labels: ["tasks", "generation", "docusaurus", "vla"]
 links:
-  spec: specs/004-vla-module/spec.md
+  spec: specs/modules/004-vla-module/spec.md
   ticket: null
   adr: null
   pr: null
 files:
-- specs/004-vla-module/tasks.md
+- specs/modules/004-vla-module/tasks.md
 tests:
 - Docusaurus build/link checks (conceptual)
 - Manual content review (conceptual)
@@ -36,7 +36,7 @@ I have successfully generated the `tasks.md` file for Module 4: Vision-Language-
 
 - ✅ Impact: Tasks generated for Docusaurus module, providing a structured plan for implementation.
 - 🧪 Tests: Conceptual tests outlined (Docusaurus build/link checks, manual content review).
-- 📁 Files: `specs/004-vla-module/tasks.md` created.
+- 📁 Files: `specs/modules/004-vla-module/tasks.md` created.
 - 🔁 Next prompts: Implement tasks from `tasks.md`
 - 🧠 Reflection: `check-prerequisites.ps1` script not found, used agent-native fallback.
 

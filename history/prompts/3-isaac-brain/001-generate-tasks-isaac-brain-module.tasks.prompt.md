@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-- specs/3-isaac-brain/tasks.md
+- specs/modules/3-isaac-brain/tasks.md
 tests:
 - Docusaurus build/link checks (conceptual)
 - Manual content review (conceptual)

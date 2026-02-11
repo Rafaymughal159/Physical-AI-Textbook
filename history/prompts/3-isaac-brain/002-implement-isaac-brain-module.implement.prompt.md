@@ -16,12 +16,12 @@ links:
   adr: null
   pr: null
 files:
-- docs/3-isaac-brain/
+- docs/modules/3-isaac-brain/
 - sidebars.js
-- docs/3-isaac-brain/chapter-1-isaac-sim.md
-- docs/3-isaac-brain/chapter-2-isaac-ros.md
-- docs/3-isaac-brain/chapter-3-navigation-nav2.md
-- specs/3-isaac-brain/tasks.md
+- docs/modules/3-isaac-brain/chapter-1-isaac-sim.md
+- docs/modules/3-isaac-brain/chapter-2-isaac-ros.md
+- docs/modules/3-isaac-brain/chapter-3-navigation-nav2.md
+- specs/modules/3-isaac-brain/tasks.md
 tests:
 - Docusaurus build/link checks (conceptual)
 - Manual content review (conceptual)
