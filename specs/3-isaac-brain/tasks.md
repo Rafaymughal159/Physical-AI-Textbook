@@ -22,7 +22,7 @@ This document outlines the tasks required to implement Module 3: The AI-Robot Br
 
 Goal: Initialize the Docusaurus documentation structure for Module 3.
 
-- [x] T001 Create documentation directory for Module 3 at `docs/3-isaac-brain/`
+- [x] T001 Create documentation directory for Module 3 at `docs/modules/3-isaac-brain/`
 - [x] T002 Update `sidebars.js` to include the new Module 3 category
 
 ### Phase 2: User Story 1 - Learn AI Perception Fundamentals with Isaac Sim (P1)
@@ -31,9 +31,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 3.
 
 **Independent Test Criteria**: Students can complete exercises demonstrating understanding of Isaac Sim's role in AI perception training and explain how synthetic data generation improves real-world performance.
 
-- [x] T003 [US1] Create chapter 1 markdown file for Isaac Sim at `docs/3-isaac-brain/chapter-1-isaac-sim.md`
-- [x] T004 [US1] Add content explaining photorealistic simulation in Isaac Sim to `docs/3-isaac-brain/chapter-1-isaac-sim.md`
-- [x] T005 [US1] Add content on synthetic data generation for robot training to `docs/3-isaac-brain/chapter-1-isaac-sim.md`
+- [x] T003 [US1] Create chapter 1 markdown file for Isaac Sim at `docs/modules/3-isaac-brain/chapter-1-isaac-sim.md`
+- [x] T004 [US1] Add content explaining photorealistic simulation in Isaac Sim to `docs/modules/3-isaac-brain/chapter-1-isaac-sim.md`
+- [x] T005 [US1] Add content on synthetic data generation for robot training to `docs/modules/3-isaac-brain/chapter-1-isaac-sim.md`
 
 ### Phase 3: User Story 2 - Understand Hardware-Accelerated Perception Systems (P2)
 
@@ -41,9 +41,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 3.
 
 **Independent Test Criteria**: Students can describe the benefits of hardware acceleration in perception systems and explain the fundamental concepts of Visual SLAM.
 
-- [x] T006 [US2] Create chapter 2 markdown file for Isaac ROS at `docs/3-isaac-brain/chapter-2-isaac-ros.md`
-- [x] T007 [US2] Add content explaining Isaac ROS hardware-accelerated perception to `docs/3-isaac-brain/chapter-2-isaac-ros.md`
-- [x] T008 [US2] Add content on Visual SLAM and localization techniques to `docs/3-isaac-brain/chapter-2-isaac-ros.md`
+- [x] T006 [US2] Create chapter 2 markdown file for Isaac ROS at `docs/modules/3-isaac-brain/chapter-2-isaac-ros.md`
+- [x] T007 [US2] Add content explaining Isaac ROS hardware-accelerated perception to `docs/modules/3-isaac-brain/chapter-2-isaac-ros.md`
+- [x] T008 [US2] Add content on Visual SLAM and localization techniques to `docs/modules/3-isaac-brain/chapter-2-isaac-ros.md`
 
 ### Phase 4: User Story 3 - Master Navigation Concepts with Nav2 (P3)
 
@@ -51,9 +51,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 3.
 
 **Independent Test Criteria**: Students can describe the key differences between traditional navigation and humanoid navigation, and explain core path planning concepts.
 
-- [x] T009 [US3] Create chapter 3 markdown file for Navigation with Nav2 at `docs/3-isaac-brain/chapter-3-navigation-nav2.md`
-- [x] T010 [US3] Add content explaining Navigation2 (Nav2) framework fundamentals to `docs/3-isaac-brain/chapter-3-navigation-nav2.md`
-- [x] T011 [US3] Add content on path planning concepts specific to humanoid navigation to `docs/3-isaac-brain/chapter-3-navigation-nav2.md`
+- [x] T009 [US3] Create chapter 3 markdown file for Navigation with Nav2 at `docs/modules/3-isaac-brain/chapter-3-navigation-nav2.md`
+- [x] T010 [US3] Add content explaining Navigation2 (Nav2) framework fundamentals to `docs/modules/3-isaac-brain/chapter-3-navigation-nav2.md`
+- [x] T011 [US3] Add content on path planning concepts specific to humanoid navigation to `docs/modules/3-isaac-brain/chapter-3-navigation-nav2.md`
 
 ### Final Phase: Polish & Cross-Cutting Concerns
 

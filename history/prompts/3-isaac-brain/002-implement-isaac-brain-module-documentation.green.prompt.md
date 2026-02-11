@@ -16,10 +16,10 @@ links:
   adr: null
   pr: null
 files:
-  - D:\Physical AI Textbook\docs\3-isaac-brain\category.json
-  - D:\Physical AI Textbook\docs\3-isaac-brain\chapter-1-isaac-sim.md
-  - D:\Physical AI Textbook\docs\3-isaac-brain\chapter-2-isaac-ros.md
-  - D:\Physical AI Textbook\docs\3-isaac-brain\chapter-3-navigation-nav2.md
+  - D:\Physical AI Textbook\docs\modules\3-isaac-brain\category.json
+  - D:\Physical AI Textbook\docs\modules\3-isaac-brain\chapter-1-isaac-sim.md
+  - D:\Physical AI Textbook\docs\modules\3-isaac-brain\chapter-2-isaac-ros.md
+  - D:\Physical AI Textbook\docs\modules\3-isaac-brain\chapter-3-navigation-nav2.md
   - D:\Physical AI Textbook\sidebars.js
 tests:
   - Docusaurus build

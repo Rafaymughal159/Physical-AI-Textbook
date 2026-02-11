@@ -16,7 +16,7 @@ links:
   adr: null
   pr: null
 files:
-  - D:\Physical AI Textbook\specs\3-isaac-brain\tasks.md
+  - D:\Physical AI Textbook\specs\modules\3-isaac-brain\tasks.md
 tests:
 null
 ---
@@ -43,7 +43,7 @@ Parallel opportunities identified. Independent test criteria for each story incl
 
 - ✅ Impact: Tasks for Module 3 generated successfully, providing a detailed roadmap for implementation.
 - 🧪 Tests: No explicit test tasks requested or generated.
-- 📁 Files: One file created: D:\Physical AI Textbook\specs\3-isaac-brain\tasks.md
+- 📁 Files: One file created: D:\Physical AI Textbook\specs\modules\3-isaac-brain\tasks.md
 - 🔁 Next prompts: Implement tasks in specs/3-isaac-brain/tasks.md
 - 🧠 Reflection: Successfully generated tasks.md based on plan.md and spec.md, following all specified rules and format. Handled PHR creation fallback when script was not found.
 

@@ -16,8 +16,8 @@ links:
   adr: null
   pr: null
 files:
-- specs/004-vla-module/spec.md
-- specs/004-vla-module/checklists/requirements.md
+- specs/modules/004-vla-module/spec.md
+- specs/modules/004-vla-module/checklists/requirements.md
 tests:
 - Specification Quality Checklist validation
 ---
@@ -65,13 +65,13 @@ Not building:
 
 ## Response snapshot
 
-I have successfully created the feature branch `004-vla-module` and generated the specification at `specs/004-vla-module/spec.md`. A quality checklist for the specification has also been created at `specs/004-vla-module/checklists/requirements.md`.
+I have successfully created the feature branch `004-vla-module` and generated the specification at `specs/modules/004-vla-module/spec.md`. A quality checklist for the specification has also been created at `specs/modules/004-vla-module/checklists/requirements.md`.
 
 ## Outcome
 
 - ✅ Impact: A new feature branch and initial specification for Module 4 VLA have been created, providing a baseline for further planning.
 - 🧪 Tests: A specification quality checklist has been generated to ensure the spec meets defined standards.
-- 📁 Files: `specs/004-vla-module/spec.md` and `specs/004-vla-module/checklists/requirements.md` were created.
+- 📁 Files: `specs/modules/004-vla-module/spec.md` and `specs/modules/004-vla-module/checklists/requirements.md` were created.
 - 🔁 Next prompts: Proceed with planning using the `/sp.plan` command with the provided plan.
 - 🧠 Reflection: The `create-new-feature.ps1` script and `create-phr.sh` script were not executable, requiring manual branch creation and agent-native PHR generation.
 

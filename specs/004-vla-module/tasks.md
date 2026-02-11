@@ -22,7 +22,7 @@ This document outlines the tasks required to implement Module 4: Vision-Language
 
 Goal: Initialize the Docusaurus documentation structure for Module 4.
 
-- [x] T001 Create documentation directory for Module 4 at `docs/004-vla-module/`
+- [x] T001 Create documentation directory for Module 4 at `docs/modules/004-vla-module/`
 - [x] T002 Update `sidebars.js` to include the new Module 4 category
 
 ### Phase 2: User Story 1 - Learn Voice-to-Action Integration (P1)
@@ -31,9 +31,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 4.
 
 **Independent Test Criteria**: Students can explain the workflow of converting a spoken command into a robot-executable intent.
 
-- [x] T003 [US1] Create chapter 1 markdown file for Voice-to-Action at `docs/004-vla-module/chapter-1-voice-to-action.md`
-- [x] T004 [US1] Add content explaining speech recognition with OpenAI Whisper to `docs/004-vla-module/chapter-1-voice-to-action.md`
-- [x] T005 [US1] Add content on converting voice commands into structured intents to `docs/004-vla-module/chapter-1-voice-to-action.md`
+- [x] T003 [US1] Create chapter 1 markdown file for Voice-to-Action at `docs/modules/004-vla-module/chapter-1-voice-to-action.md`
+- [x] T004 [US1] Add content explaining speech recognition with OpenAI Whisper to `docs/modules/004-vla-module/chapter-1-voice-to-action.md`
+- [x] T005 [US1] Add content on converting voice commands into structured intents to `docs/modules/004-vla-module/chapter-1-voice-to-action.md`
 
 ### Phase 3: User Story 2 - Understand Language-Based Robot Planning (P2)
 
@@ -41,9 +41,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 4.
 
 **Independent Test Criteria**: Students can outline how an LLM can break down a complex task into a sequence of robot actions.
 
-- [x] T006 [US2] Create chapter 2 markdown file for Language-Based Planning at `docs/004-vla-module/chapter-2-language-based-planning.md`
-- [x] T007 [US2] Add content on using LLMs for task decomposition to `docs/004-vla-module/chapter-2-language-based-planning.md`
-- [x] T008 [US2] Add content on mapping natural language to ROS 2 action sequences to `docs/004-vla-module/chapter-2-language-based-planning.md`
+- [x] T006 [US2] Create chapter 2 markdown file for Language-Based Planning at `docs/modules/004-vla-module/chapter-2-language-based-planning.md`
+- [x] T007 [US2] Add content on using LLMs for task decomposition to `docs/modules/004-vla-module/chapter-2-language-based-planning.md`
+- [x] T008 [US2] Add content on mapping natural language to ROS 2 action sequences to `docs/modules/004-vla-module/chapter-2-language-based-planning.md`
 
 ### Phase 4: User Story 3 - Comprehend End-to-End Autonomous Humanoid Systems (P3)
 
@@ -51,9 +51,9 @@ Goal: Initialize the Docusaurus documentation structure for Module 4.
 
 **Independent Test Criteria**: Students can describe the overall architecture and information flow within an autonomous VLA-driven humanoid system.
 
-- [x] T009 [US3] Create chapter 3 markdown file for Capstone – The Autonomous Humanoid at `docs/004-vla-module/chapter-3-autonomous-humanoid.md`
-- [x] T010 [US3] Add content on end-to-end system overview to `docs/004-vla-module/chapter-3-autonomous-humanoid.md`
-- [x] T011 [US3] Add content on navigation, perception, and manipulation flow to `docs/004-vla-module/chapter-3-autonomous-humanoid.md`
+- [x] T009 [US3] Create chapter 3 markdown file for Capstone – The Autonomous Humanoid at `docs/modules/004-vla-module/chapter-3-autonomous-humanoid.md`
+- [x] T010 [US3] Add content on end-to-end system overview to `docs/modules/004-vla-module/chapter-3-autonomous-humanoid.md`
+- [x] T011 [US3] Add content on navigation, perception, and manipulation flow to `docs/modules/004-vla-module/chapter-3-autonomous-humanoid.md`
 
 ### Final Phase: Polish & Cross-Cutting Concerns
 
