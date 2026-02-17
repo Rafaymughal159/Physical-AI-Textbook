@@ -1,0 +1,60 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(80vh - var(--doc-navbar-height)); /* Adjusted height to move content up */
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Space between left and right sections */
+  margin-bottom: 2rem;
+}
+
+.leftContent {
+  flex: 1;
+  text-align: left;
+}
+
+.rightContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepageLogo {
+  width: 500px;
+  height: 500px;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .heroContent {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .leftContent {
+    text-align: center;
+  }
+
+  .homepageLogo {
+    margin-top: 2rem; /* Add some space above the logo when stacked */
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
