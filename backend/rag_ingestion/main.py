@@ -14,7 +14,7 @@ import hashlib
 import logging
 import asyncio
 from typing import List, Dict, Any, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 import re
 import urllib.parse
 
@@ -52,7 +52,7 @@ def get_config():
         'cohere_api_key': os.getenv('COHERE_API_KEY'),
         'qdrant_url': os.getenv('QDRANT_URL'),
         'qdrant_api_key': os.getenv('QDRANT_API_KEY'),
-        'docs_base_url': os.getenv('DOCS_BASE_URL', 'https://physicalaitextbook.vercel.app/docs'),
+        'docs_base_url': os.getenv('DOCS_BASE_URL', 'https://ai-textbook-hazel.vercel.app/'),
         'chunk_size_chars': int(os.getenv('CHUNK_SIZE_CHARS', '2000')),
         'overlap_chars': int(os.getenv('OVERLAP_CHARS', '200')),
         'batch_size': int(os.getenv('BATCH_SIZE', '32')),
@@ -214,12 +214,28 @@ def extract_text_from_URL(url: str) -> Dict[str, str]:
         # Parse the HTML content
         soup = BeautifulSoup(response.content, 'html.parser')
 
-        # Remove unwanted elements (navigation, headers, footers, etc.)
-        for element in soup(['script', 'style', 'nav', 'header', 'footer', 'aside']):
-            element.decompose()
+        # Extract page title from <title> tag first
+        title_tag = soup.find('title')
+        title = title_tag.get_text().strip() if title_tag else 'No Title'
 
-        # Try to extract content from Docusaurus-specific selectors
-        content_selectors = [
+        # Initialize content parts
+        content_parts = []
+
+        # Try to find the main hero section content for the homepage
+        left_content = soup.select_one('.leftContent')
+        if left_content:
+            h1_title = left_content.select_one('.hero__title')
+            if h1_title:
+                content_parts.append(h1_title.get_text(strip=True))
+            subtitle = left_content.select_one('.hero__subtitle')
+            if subtitle:
+                content_parts.append(subtitle.get_text(strip=True))
+            button_link = left_content.select_one('.buttons a')
+            if button_link:
+                content_parts.append(button_link.get_text(strip=True))
+
+        # Also try to extract content from standard Docusaurus selectors for doc pages
+        standard_content_selectors = [
             '.theme-doc-markdown',  # Main documentation content area
             '.markdown',           # Markdown-rendered content
             '[role="main"]',       # Main content area
@@ -229,37 +245,34 @@ def extract_text_from_URL(url: str) -> Dict[str, str]:
             '.docs-doc-id-*'       # Docusaurus specific class pattern
         ]
 
-        content_element = None
-        for selector in content_selectors:
-            # Handle wildcard selector specially
+        for selector in standard_content_selectors:
             if '*' in selector:
-                # Look for classes that start with 'docs-doc-id-'
                 for tag in soup.find_all(True):
                     classes = tag.get('class', [])
                     if classes and any(cls.startswith('docs-doc-id-') for cls in classes):
-                        content_element = tag
+                        content_parts.append(tag.get_text(separator='\n', strip=True))
                         break
             else:
-                content_element = soup.select_one(selector)
+                element = soup.select_one(selector)
+                if element:
+                    content_parts.append(element.get_text(separator='\n', strip=True))
 
-            if content_element:
-                break
+        # If no specific content found, fallback to body but after cleaning
+        if not content_parts and soup.find('body'):
+            # Remove unwanted elements before extracting from body
+            for element in soup(['script', 'style', 'nav', 'header', 'footer', 'aside']):
+                element.decompose()
+            body_content = soup.find('body').get_text(separator='\n', strip=True)
+            if body_content:
+                content_parts.append(body_content)
 
-        # If no specific content element found, use body
-        if not content_element:
-            content_element = soup.find('body')
+        # Combine all extracted content parts
+        full_content = '\n\n'.join(filter(None, content_parts)) # Filter out empty strings
 
-        # Extract text content
-        content = content_element.get_text(separator='\n', strip=True) if content_element else ''
-
-        # Clean up the content - remove extra whitespace and empty lines
-        lines = [line.strip() for line in content.split('\n')]
+        # Clean up the combined content - remove extra whitespace and empty lines
+        lines = [line.strip() for line in full_content.split('\n')]
         cleaned_lines = [line for line in lines if line]
         content = '\n'.join(cleaned_lines)
-
-        # Extract title
-        title_tag = soup.find('title')
-        title = title_tag.get_text().strip() if title_tag else 'No Title'
 
         logger.info(f"Successfully extracted content from {url} ({len(content)} characters)")
 
@@ -317,33 +330,39 @@ def Chunk_text(content: str, chunk_size_chars: int = 2000, overlap_chars: int = 
     start = 0
     content_length = len(content)
 
+    if content_length <= chunk_size_chars:
+        # If content is smaller than or equal to chunk size, return it as a single chunk
+        chunk_data = {
+            'content': content,
+            'start_pos': 0,
+            'end_pos': content_length,
+            'length': content_length,
+        }
+        chunks.append(chunk_data)
+        return chunks
+
     while start < content_length:
-        # Determine the end position for this chunk
-        end = start + chunk_size_chars
-
-        # If this is the last chunk and it's smaller than chunk_size_chars, include it entirely
-        if end > content_length:
-            end = content_length
-
-        # Extract the chunk
+        end = min(start + chunk_size_chars, content_length)
         chunk_text = content[start:end]
 
-        # Create chunk data
+        if not chunk_text:  # Prevent empty chunks and infinite loops for edge cases
+            break
+
         chunk_data = {
             'content': chunk_text,
             'start_pos': start,
             'end_pos': end,
             'length': len(chunk_text),
         }
-
         chunks.append(chunk_data)
 
-        # Move to the next chunk position, accounting for overlap
-        start = end - overlap_chars
+        # Calculate next start position with overlap, ensuring it doesn't go backwards
+        next_start = end - overlap_chars
+        start = max(0, next_start)
 
-        # Prevent infinite loop if overlap is greater than or equal to chunk size
+        # If start didn't advance, it means we've processed all we can with overlap
         if start >= end:
-            start = end
+            break # Exit to prevent infinite loop if overlap causes no progress
 
     logger.info(f"Content chunked into {len(chunks)} pieces (avg {sum(c['length'] for c in chunks) // len(chunks) if chunks else 0} chars)")
     return chunks
@@ -471,7 +490,7 @@ def save_chunk_to_qdrant(chunk_data: Dict, qdrant_client=None, collection_name: 
             'document_url': document_url,
             'title': chunk_data.get('title', ''),
             'content_hash': calculate_content_hash(content),
-            'created_at': datetime.utcnow().isoformat(),
+            'created_at': datetime.now(timezone.utc).isoformat(),
             'chunk_position': chunk_data.get('position', 0),
             'token_count': chunk_data.get('token_count', len(content.split()))
         }
