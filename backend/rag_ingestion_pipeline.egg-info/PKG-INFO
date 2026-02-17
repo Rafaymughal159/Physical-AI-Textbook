@@ -48,7 +48,7 @@ This pipeline crawls Docusaurus documentation sites, extracts and cleans text co
    COHERE_API_KEY=your_cohere_api_key_here
    QDRANT_URL=your_qdrant_cluster_url_here
    QDRANT_API_KEY=your_qdrant_api_key_here
-   DOCS_BASE_URL=https://physicalaitextbook.vercel.app/docs
+   DOCS_BASE_URL=https://ai-textbook-hazel.vercel.app/
    CHUNK_SIZE_CHARS=2000
    OVERLAP_CHARS=200
    BATCH_SIZE=32
