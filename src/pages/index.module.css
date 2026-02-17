@@ -4,8 +4,8 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  min-height: calc(100vh - var(--doc-navbar-height)); /* Full viewport height minus navbar */
+  align-items: flex-start;
+  min-height: calc(80vh - var(--doc-navbar-height)); /* Adjusted height to move content up */
 }
 
 .heroContent {
@@ -30,11 +30,8 @@
 }
 
 .homepageLogo {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 500px;
+  height: 500px;
 }
 
 @media screen and (max-width: 996px) {

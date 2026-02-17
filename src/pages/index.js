@@ -17,19 +17,19 @@ function HomepageHeader() {
               A comprehensive guide to the intersection of AI and the physical world.
               Explore robotics, embodied AI, and real-world applications.
             </p>
+            {/* Button section */}
+            <div className={styles.buttons}>
+              <Link
+                className="button button--secondary button--lg"
+                to="/docs/intro">
+                Start Reading
+              </Link>
+            </div>
           </div>
           {/* Right section: Book logo */}
           <div className={styles.rightContent}>
             <img src="/img/logo.svg" alt="Book Logo" className={styles.homepageLogo} />
           </div>
-        </div>
-        {/* Button section */}
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Start Reading
-          </Link>
         </div>
       </div>
     </header>
