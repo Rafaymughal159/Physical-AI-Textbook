@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+rag_ingestion/main.py
+rag_ingestion_pipeline.egg-info/PKG-INFO
+rag_ingestion_pipeline.egg-info/SOURCES.txt
+rag_ingestion_pipeline.egg-info/dependency_links.txt
+rag_ingestion_pipeline.egg-info/requires.txt
+rag_ingestion_pipeline.egg-info/top_level.txt
